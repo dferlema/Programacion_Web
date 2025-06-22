@@ -1,0 +1,96 @@
+/* Estilos generales (opcional, para mejorar la visualización) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #0056b3;
+}
+
+/* Contenedor de las cards */
+.menu-cards-container {
+    display: grid; /* Usamos CSS Grid para organizar las cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre las cards */
+    padding: 20px;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centrar el contenedor */
+}
+
+/* Estilos para cada card individual */
+.menu-card {
+    background-color: #ffffff; /* Fondo blanco para cada card */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para un efecto 3D */
+    overflow: hidden; /* Oculta cualquier contenido que se desborde, importante para la imagen */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hereda el color de texto del padre */
+    display: flex; /* Flexbox para organizar imagen y contenido verticalmente */
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.menu-card:hover {
+    transform: translateY(-8px); /* Eleva la card ligeramente al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    overflow: hidden; /* Para recortar la imagen si es necesario */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el título y descripción a los extremos */
+}
+
+.card-title {
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #0056b3; /* Color azul para el título */
+}
+
+.card-description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Media Queries para Responsividad (opcional pero muy recomendado) */
+@media (max-width: 768px) {
+    .menu-cards-container {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        padding: 15px;
+    }
+
+    .menu-card {
+        margin-bottom: 20px; /* Espacio entre cards en pantallas pequeñas */
+    }
+}
